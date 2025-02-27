@@ -1,8 +1,6 @@
-
-
 create DATABASE escuelita;
 
-go 
+go
 
 use escuelita
 
@@ -31,7 +29,7 @@ CREATE TABLE Docente(
     FOREIGN KEY (CURP) REFERENCES Persona(CURP)
 )
 
-CREATE TABLE Administrativo(
+CREATE TABLE Administrativo (
     CURP CHAR(18) NOT NULL
     PRIMARY KEY
     FOREIGN KEY REFERENCES Persona(CURP)
