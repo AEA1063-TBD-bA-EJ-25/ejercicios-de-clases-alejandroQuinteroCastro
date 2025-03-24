@@ -54,3 +54,5 @@ INSERT INTO Persona (CURP, Nombre, Direccion, Nacimiento)
 
 
 SELECT * FROM Persona;
+
+
