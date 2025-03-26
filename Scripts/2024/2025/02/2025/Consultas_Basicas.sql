@@ -3,7 +3,6 @@ GO
 select * FROM Employees;
 SELECT * FROM Products;
 SELECT * FROM Suppliers;
-SELECT * FROM Orders;
 SELECT * FROM [Order Details]
 
 SELECT employeeid, lastname, firstname
@@ -69,4 +68,31 @@ SELECT productid, productname, unitprice, CategoryID
 
 
     SELECT * from [Order Details]
+
+
+    SELECT sum(UnitPrice*Quantity- Discount*UnitPrice*Quantity) from [Order Details];
+    
+
+
+    SELECT sum(UnitPrice*Quantity- Discount*UnitPrice*Quantity) from [Order Details];
+    
+    
+    SELECT sum([Order Details].UnitPrice * Quantity-discount*[Order Details].UnitPrice*Quantity) as mango from [Order Details]
+    JOIN products on Products.productid = [Order Details].productid 
+    WHERE CategoryID = 1; 
+
+
+
+
+    SELECT CategoryID FROM Categories
+        WHERE CategoryName like 'Beverages'
+
+    SELECT sum([Order Details].UnitPrice * Quantity-discount*[Order Details].UnitPrice*Quantity) as mango from [Order Details]
         
+
+    select dataname(month, o.orderdate) sum(o.OrderDate*Quantity - Discount * od.UnitPrice * Quantity) from [Order Details]
+        join orders o on O.OrderID = o.OrderID
+        JOIN Products p on od.ProductID = p.ProductID
+        join Categories c on p.CategoryID = c.CategoryID 
+        WHERE YEAR(o.OrderDate ) = 1997 
+        group by c.CategoryName, DATEPART( month, o.OrderDate), 
