@@ -96,3 +96,39 @@ SELECT productid, productname, unitprice, CategoryID
         join Categories c on p.CategoryID = c.CategoryID 
         WHERE YEAR(o.OrderDate ) = 1997 
         group by c.CategoryName, DATEPART( month, o.OrderDate), 
+
+
+
+
+    select productid, productname, Categories.categoryid, CategoryName FROM Products
+    JOIN Categories on Products.CategoryID = Categories.CategoryID; 
+
+
+    SELECT orderid, sum([Order details]*Quantity- Discount*{Order details]*Quantity) 
+    FROM [Order details]
+    where importe< 500
+    GROUP by orderid;
+    
+
+
+SELECT orderid, sum([Order details]*Quantity- Discount*{Order details]*Quantity) FROM [Order details]
+
+
+
+
+--Con variable 
+DECLARE @maximo money 
+select @maximo = max(Unitprice) from products 
+
+select productname from products
+where Unitprice = @maximo
+--Sin variable
+SELECT productname, Unitprice FROM products 
+where  UnitPrice = (select max (Unitprice) from products)
+
+SELECT companyName FROM customers 
+join orders on customers.customerID = orders.customerID
+WHERE orderdate > '1/1/1995';
+
+
+
