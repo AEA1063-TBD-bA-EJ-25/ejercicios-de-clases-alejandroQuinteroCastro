@@ -131,4 +131,10 @@ join orders on customers.customerID = orders.customerID
 WHERE orderdate > '1/1/1995';
 
 
+use social 
+SELECT * FROM highshooler 
 
+SELECT * FROM highschooler h1
+JOIN likes 1 on 1.id1 = h1.id
+join highschooler h2 on 1.id2 = h2.id
+WHERE h1.grade -2 >= h2.grade
